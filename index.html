@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel escola</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- cabeçalho de perfil: Gerar painel de resumo -->
+    <header>
+        <h1>Painel Escolar</h1>
+        <nav>
+            <ul>
+                <li><a href="#resumo">Resumo</a></li>
+                <li><a href="#disciplinas">Disciplinas</a></li>
+                <li><a href="#metas">Metas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <!--Resumos-->
+        <section id="resumo" class="resumos">
+        <article class="card">
+            <h2>Discente</h2>
+            <p id="resumoDiscente">Carregando discente...</p>
+        </article>
+
+        <article class="card">
+            <h2>Responsável</h2>
+            <p id="resumoResponsavel">Carregando responsável...</p>
+        </article>
+        </section>
+
+        <!--Usar select com as disciplinas-->
+        <label for="disciplina">Selecione uma disciplina:</label>
+        <select id="disciplina" name="disciplina">
+            <option value="">-- Selecione --</option>
+            <option value="disciplina1">Disciplina 1</option>
+            <option value="disciplina2">Disciplina 2</option>
+            <option value="disciplina3">Disciplina 3</option>
+        </select>
+
+        <!--seletor de modalidade-->
+        <label for="modalidade">Selecione uma modalidade:</label>
+        <select id="modalidade" name="modalidade">
+            <option value="">-- Selecione --</option>
+            <option value="pomodoro">Pomodoro</option>
+            <option value="exercicios">Exercícios</option>
+            <option value="leitura">Leitura</option>
+        </select>
+
+        <!-- campos numéricos -->
+        <div class="campo-formulario">
+            <label for="minutos">Duração da sessão (minutos):</label>
+            <input
+                type="number"
+                id="minutos"
+                name="minutos"
+                min="1"
+                max="480"
+                required
+            >
+        </div>
+
+        <div class="campo-formulario" id="camposExtras">
+            <label for="dadoExtra" id="labelDadoExtra">
+                Ciclos completos:
+            </label>
+
+            <input
+                type="number"
+                id="dadoExtra"
+                name="dadoExtra"
+                min="0"
+                required
+            >
+        </div>
+
+        <!--Botão Registrar estudo que instancia de SessaoEstudo-->
+        <button id="registrarEstudo">Registrar Estudo</button>
+
+        <!--Barra de progresso-->
+        <section id="metas" class="card">
+            <h2>Progresso da meta semanal</h2>
+
+            <div class="barra-progresso">
+                <div id="progressoPreenchido"></div>
+            </div>
+
+            <p id="percentualMeta">0% concluído</p>
+        </section>
+
+        <!-- Lista na tela GerarFeedback-->
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <ul id="listaFeedback">
+                <!-- Os itens de feedback serão adicionados aqui dinamicamente -->
+            </ul>
+        </section>
+
+        <!--Botão Notificar Responsável que dispara seu INotificador-->
+        <button id="notificarResponsavel">Notificar Responsável</button>
+
+    </main>
+
+    <!--Conexão js-->
+    <script src="backend.js"></script>
+    <script src="script.js"></script>
+</body>
